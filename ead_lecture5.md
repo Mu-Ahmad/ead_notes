@@ -1,5 +1,5 @@
 ---
-Tags: toProcess ead 
+Tags: completed ead 
 ---
 Links: [[EAD|HomePage]]
 # N-Tier Architecture

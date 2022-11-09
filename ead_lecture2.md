@@ -1,5 +1,5 @@
 ---
-Tags: ead notes complete
+Tags: ead notes toProcess
 ---
 Links: [[EAD|HomePage]]
 
@@ -168,6 +168,8 @@ class MyProgram
 ```
 
 
+## Object Intializer
+Need to fill this
 # To Dos
 - [x] Set up VS and stuff
 <br>
