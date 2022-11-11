@@ -6,7 +6,6 @@ Links: [[EAD|HomePage]]
 - ADO stands for **ActiveX Data Object.**
 - It is a **database access texchnology** created by Microsoft as part of it's `.NET Framework` that can access any kind of data source.
 - It's a set of `classes` that provide you rich set of data components to create *high performance, reliable and scalable databse applications.* These classes are used to perform ***CRUD*** operations from data sources.
-- 
 
 ## Architecture
 ```mermaid
@@ -87,14 +86,13 @@ ADO.NET **connection** is an object that provides database connectivity and the 
 **Connection does not close implicitly even it goes out of scope. Therefore, you must explicitly close the connection by calling `Close()` method.**
 
 ```ad-hint
-When we have to perform an operation on database, we must have to Open and close the connection.
-`con.Open()`, `con.Close()`
+When we have to perform an operation on database, we must have to Open and close the connection. `con.Open()`, `con.Close()`. 
 To ensure that connections are *always closed*, open the connection inside of a `using`^[In C#, the `using` keyword has *two purposes*: The first is the using directive, which is used to import **namespaces** at the top of a code file. The second is the using statement. C# 8 using statements ensure that classes that implement the `IDisposable` interface call their *dispose* *method*.] block.
 ```
 
 ```ad-summary
-1. When the connection of an object is instantiated, the constructor takes a connection string that contains the information about the database server, server type, database name, connection type, and database user credentials.
-2. Once the connection string is passed and the connection object is created, you can establish a connection with the database.
+1. When the connection of an object is **instantiated**, the constructor takes a *connection string* that contains the information about the database server, server type, database name, connection type, and database user credentials.
+2. Once the connection string is passed and the connection object is *created*, you can establish a connection with the database.
 3. A connection string is usually stored in the **web.config** file or **app.config** file of an application.
 
 ```
@@ -159,7 +157,7 @@ When using sequential access ([CommandBehavior.SequentialAccess](https://learn.m
 | Signature        | Behaviour                                                                                                                                  |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | `Read()`         | It Advances the `System.Data.SqlClient.SqlDataReader` to the next record and returns **true** if there are more rows; otherwise **false.** |
-| `GetName(int i)` | It gets the name of the specified column. Here, parameter i is the *zero-based column ordinal.*                                            |
+| `GetName(int)` | It gets the name of the specified column. Here, parameter i is the *zero-based column ordinal.*                                            |
 | `NextResult()`   | It advances the data reader to the next result when reading the results of **batch** *Transact-SQL statements.*                                                                                                                                           |
 
 ## End
