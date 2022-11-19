@@ -160,6 +160,27 @@ When using sequential access ([CommandBehavior.SequentialAccess](https://learn.m
 | `GetName(int)` | It gets the name of the specified column. Here, parameter i is the *zero-based column ordinal.*                                            |
 | `NextResult()`   | It advances the data reader to the next result when reading the results of **batch** *Transact-SQL statements.*                                                                                                                                           |
 
+## SQL Injection
+To prevent `SQL injection` we used parameterised queries.
+
+```cs
+// Sql Injection Example
+string query = $\"SELECT * FROM Users Where Username='a' AND Password='anybs' or 1==1 --'";
+
+SqlCommand cmd = new SqlCommand(query, con);
+SqlDataReader dr = cmd.ExecuteReader(); // Will return True even when record don't exist
+
+// Safe
+String query = $"SELECT *  FROM Users Where Username=@u AND Password=@p";
+SqlCommand cmd = new SqlCommand(query, con);
+SqlParameter p1 = new SqlParameter("u", "Ahmad");
+SqlParameter p2 = new SqlParameter("p", "wesome' or 1==1 --"); // no injection 
+cmd.Parameters.Add(p1);
+cmd.Parameters.Add(p2);
+SqlDataReader dr = cmd.ExecuteReader(); // Will work in right way
+
+```
+
 ## End
 ---
 > Freedom is not worth having if it does not connote freedom to err.

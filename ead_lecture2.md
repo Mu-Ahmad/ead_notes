@@ -121,8 +121,7 @@ class Example
 
 
 ## Creating a .dll file
-By default access modifier of a class is `internal` meaning 
-that  it is only visible with in it's assembly. We need to ensure that class of a library(.dll) is public. You will need to do it little different in Visual Studio (Not fun).
+By default access modifier of a class is `internal` meaning that  it is only visible with in it's assembly. We need to ensure that class of a library(.dll) is public. You will need to do it little different in Visual Studio *(Not fun).*
 ```cs
 Public class MyLibrary
 {
@@ -170,6 +169,17 @@ class MyProgram
 
 ## Object Intializer
 Need to fill this
+## parmas keywords
+By using the `params` keyword, you can specify a *method parameter* that takes a variable number of arguments. The parameter type must be a single-dimensional array.
+
+No additional parameters are permitted after the `params` keyword in a method declaration, and only one `params` keyword is permitted in a method declaration.
+
+When you call a method with a `params` parameter, you can pass in:
+
+-   A comma-separated list of arguments of the type of the array elements.
+-   An array of arguments of the specified type.
+-   No arguments. If you send no arguments, the length of the `params` list is zero.
+
 # To Dos
 - [x] Set up VS and stuff
 <br>

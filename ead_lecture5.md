@@ -15,7 +15,7 @@ graph TD
 	A["1. PL<br>---<br>GUI/CMD"]
 	B[/2. Business Logic\]
 	C[("3. DAL<br>-----<br>RDMS/NoSQL<br>File System etc")]
-	A --> |"Data Transfer Object (DAO/DTO)"| B --> |"DTO"| C
+	A --> |"4. Data Transfer Object (DAO/DTO)"| B --> |"DTO"| C
 	B --> |"DTO"| A 
 	C --> |"DTO"| B
 ```
