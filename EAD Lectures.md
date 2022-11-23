@@ -11,5 +11,6 @@ Links: [[EAD|HomePage]]
 6. [[ead_lecture6|lec6]]
 7. [[ead_lecture7_8|lec7_8]]
 8. [[ead_lecture9|lec9]]
+9. [[ead_lecture10|lec10]]
 
 Created: 2022-10-20
