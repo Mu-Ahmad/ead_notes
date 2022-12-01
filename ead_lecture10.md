@@ -24,16 +24,36 @@ public static void Main()
 	
 	String insertQuery = $"INSERT INTO tbl values(@c1, @c2)";
 	SqlCommand insertCommand = new SqlCommand(insertQuery, con);
+	
 	SqlParameter p1 = new SqlParameter("c1", SqlDBType.NCHar, 10, "Col1");
 	SqlParameter p2 = new SqlParameter("c2", SqlDBType.NCHar, 10, "Col2");
+	
 	insertCommand.Parameter.Add(p1);
 	insertCommand.Parameter.Add(p2);
+
+	String updateQuery = $"UPDATE tbl set col2 = @c2 where col1=@c1";
+	SqlCommand updateCommand = new SqlCommand(selectQuery, con);
+	
+	SqlParameter p3 = new SqlParameter("c1", SqlDBType.NCHar, 10, "Col1");
+	SqlParameter p4 = new SqlParameter("c2", SqlDBType.NCHar, 10, "Col2");
+	
+	updateCommand.Parameter.Add(p3);
+	updateCommand.Parameter.Add(p4);
+
+
+	String deleteQuery = $"DELETE * FROM tbl WHERE col1 = @c1";
+	SqlCommand delteCommand = new SqlCommand(deleteQuery, con);
+	
+	SqlParameter p5 = new SqlParameter("c1", SqlDBType.NCHar, 10, "Col1");
+
+	deleteCommand.Parameter.Add(p5);
 
 	// initialise DataAdapter
 	SqlDataAdapter da = new();
 	
 	da.SelectCommand = selectCommand;
 	da.InsertCommand = insertCommand;
+	da.UpdateCommand = updateCommand;
 	
 	// Fill in DataTable
 	DataTable tbl = new();
