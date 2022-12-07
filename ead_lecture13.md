@@ -109,7 +109,51 @@ class MyProgram
 }
 ```
 
+##### Example-3
+```cs
+using System;
+using System.Collections;
 
+// Create Delegate
+delegate void MyEventHandler(object obj);
+
+class MyProgram
+{
+    // 1. Publisher Class
+    class MyList : Stack
+    {
+        // 1. define Event
+        public event MyEventHandler push;
+        public event MyEventHandler pop;
+
+        // 2. Raise Event
+        public override void Push(object value)
+        {
+            push(value);
+            base.Push(value);
+        }
+
+        public override object Pop()
+        {
+            
+            object obj = base.Pop();
+            pop(obj);
+            return obj;
+        }
+    }
+
+    static void Main()
+    {
+        MyList list = new MyList();
+        list.push += (object obj) => Console.WriteLine(obj + " pushed");
+        list.pop += (object obj) => Console.WriteLine(obj + " poped");
+
+        list.Push(69);
+        list.Pop();
+        list.Push(88);
+    }
+}
+```
 ---
 > From wonder into wonder existence opens.
 > — <cite>Laozi</cite>

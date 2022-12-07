@@ -26,10 +26,14 @@ class MyProgram
     static void Main()
     {
         // 1. Define the Data Source
-        var cities = new String[] {"Lahore", "Islamabad", "Kasur", "Peshawar", "Sialkot", "karachi"};
+        var cities = new String[] {"Lahore", "Islamabad", "Kasur", "Peshawar", "Sialkot", "karachi", "Istanbol"};
 
         // 2. Define the Query
-        var query = cities.Where((str)=>str.Length>6).Where((str)=>str[0]=='I');
+        var query = cities.Where((str)=>str.Length>6).Where((str)=>str[0]=='I').Select(n=>n.Substring(0,4));
+
+        var query2 = from c in cities
+                     where c.Length > 6
+                     select c;
 
         // 3. Process Query
         foreach (var c in query)
@@ -37,8 +41,45 @@ class MyProgram
     }
 }
 
+
+
 ```
 **Output:** `Islamabad`
 
+##### Example-2
+```cs
+using System;
+using System.Linq;
+
+class MyProgram
+{
+
+    class EmailAddress
+    {
+        public string Name {get; set;}
+
+        public string Adress {get; set; }
+    }
+
+
+    static void Main()
+    {
+        // 1. Define the Data Source
+        var adresses = new EmailAddress[] {
+            new EmailAddress {Name="Ahmad", Adress="abc"},
+            new EmailAddress {Name="Ali", Adress="abc"},
+            new EmailAddress {Name="Raheem", Adress="abc"},
+        };
+
+        // 2. Define the Query, We need to return object (anonymous classes are used) 
+        var query2 = from c in adresses
+                     select new {Name = c.Name, Adress = c.Adress};
+
+        // 3. Process Query
+        foreach (var c in query2)
+            Console.WriteLine(c);
+    }
+}
+```
 ---
 Created: 2022-11-29
