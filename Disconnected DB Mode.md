@@ -1,14 +1,15 @@
 ---
-Tags: toProcess
+Tags: completed lec9 db
 ---
 Links: [[EAD]]
 # Disconnected DB Mode
 
 
 ## Connected DB Mode
+Connected DB mode is when an application is running and connected to a database. This mode allows the application to read and write data to the database.
 
 ## Disconnected DB Mode
-
+The Disconnected DB Mode is a way of accessing a database where the connection to the database is only used when absolutely necessary. This means that the connection to the database is not always open, which can improve performance.
 We will use `SqlDataAdapter` class for this purpose.
 ##### Data Structures
 `DataTable` `DataSet`

@@ -1,5 +1,5 @@
 ---
-Tags: completed ead
+Tags: completed ead lec4
 ---
 Links: [[EAD|HomePage]]
 # Properties

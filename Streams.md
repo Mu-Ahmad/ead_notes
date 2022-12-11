@@ -1,5 +1,5 @@
 ---
-Tags: completed ead
+Tags: completed ead lec3
 ---
 Links: [[EAD|HomePage]]
 # Streams

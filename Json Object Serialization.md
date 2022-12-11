@@ -1,5 +1,5 @@
 ---
-Tags: ead 
+Tags: ead lec6
 ---
 Links: [[EAD Lectures|HomePage]]
 
@@ -179,7 +179,7 @@ namespace SerializeExtra
 #### Serialization behavior
 - By default, all public properties are serialized. You can [specify properties to ignore](https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/ignore-properties).
 - The default encoder^[A built-in instance of the `JavaScriptEncoder` class.] escapes non-ASCII characters, HTML-sensitive characters within the ASCII-range, and characters that must be escaped according to the *RFC 8259* JSON spec.
-- By default, JSON is [[ead_lecture6#^6cdec7|minified]]. You can pretty-print the JSON.
+- By default, JSON is [[Json Object Serialization#^6cdec7|minified]]. You can pretty-print the JSON.
 - By default, casing of JSON names matches the *.NET names*. You can customize JSON name casing.
 - By default, *circular references* are detected and **exceptions thrown.** You can preserve references and handle circular references.
 - By default, fields are *ignored.* You can include fields.
@@ -187,7 +187,7 @@ namespace SerializeExtra
 #### Supported types include:
 
 -   .NET primitives that map to JavaScript primitives, such as numeric types, strings, and Boolean.
--   User-defined plain old CLR objects (POCOs^[A POCO—or a plain old class/[[ead_lecture1#^d0e203|CLR]] object—is a .NET data structure that contains only public properties or fields. A POCO shouldn't contain any other members, such as: `methods`, `events`, `delegates`. These objects are used primarily as *data transfer objects (DTOs).* A pure POCO will not inherit another object, or implement an interface. **It's common for POCOs to be used with serialization**.]).
+-   User-defined plain old CLR objects (POCOs^[A POCO—or a plain old class/[[CS Compilation Process#^d0e203|CLR]] object—is a .NET data structure that contains only public properties or fields. A POCO shouldn't contain any other members, such as: `methods`, `events`, `delegates`. These objects are used primarily as *data transfer objects (DTOs).* A pure POCO will not inherit another object, or implement an interface. **It's common for POCOs to be used with serialization**.]).
 -   One-dimensional and jagged arrays (`T[][]`).
 -   Collections and dictionaries from the following namespaces.
 	- `System.Collections`
@@ -201,7 +201,7 @@ namespace SerializeExtra
 
 
 ## <u>How to read JSON as .NET objects ***</u>(deserialize)***
-A common way to *deserialize* JSON is to first create a class with properties and fields that represent one or more of the JSON properties. Then, to deserialize from a string or a file, call the `JsonSerializer.Deserialize` method. For the generic overloads, you pass the type of the class you created as the generic type parameter. For the [[ead_lecture6#^20bb2a|non-generic overloads]], you pass the type of the class you created as a method parameter. You can deserialize either synchronously or asynchronously.
+A common way to *deserialize* JSON is to first create a class with properties and fields that represent one or more of the JSON properties. Then, to deserialize from a string or a file, call the `JsonSerializer.Deserialize` method. For the generic overloads, you pass the type of the class you created as the generic type parameter. For the [[Json Object Serialization#^20bb2a|non-generic overloads]], you pass the type of the class you created as a method parameter. You can deserialize either synchronously or asynchronously.
 Any JSON properties that aren't represented in your class are *ignored*. Also, if any properties on the type are required but not present in the JSON payload, *deserialization will fail.*
 
 #### Example

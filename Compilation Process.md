@@ -1,10 +1,10 @@
 ---
-Tags: ead notes toProcess
+Tags: ead notes completed
 ---
 Links: [[EAD|HomePage]]
 
 # C# Compilation Process
- **[[ead_lecture1|Read Here]]**
+ **[[CS Compilation Process|Read Here]]**
  
 ## Simple Program
 ```CS
@@ -151,6 +151,9 @@ class MyProgram
 ```
 `$ csc /reference:MyLibrary.dll MyProgram.c && MyProgram.exe` -> `69`
 
+## Circular Reference
+A circular reference is when an object contains a *reference to itself.* This can happen in C# when an object contains a reference to another object which contains a reference back to the first object. This can cause problems because it can create a loop that is never broken and can cause the program to crash.
+
 ## Type Casting
 ```cs
 using System;
@@ -192,7 +195,7 @@ type: WordCloud
 #-----------------#
 #- chart data    -#
 #-----------------#
-data: "wordcount:ead_lecture2"
+data: "wordcount:Compilation Process"
 
 #-----------------#
 #- chart options -#
