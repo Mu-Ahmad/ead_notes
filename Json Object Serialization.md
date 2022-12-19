@@ -7,7 +7,7 @@ Links: [[EAD Lectures|HomePage]]
 JSON  is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays (or other serializable values).
 ```ad-summary
 
-- *JSON* **data** is written as name/value pairs, A `name/value` pair consists of a field name (in double quotes), followed by a colon, followed by a value.
+- *JSON* **data** is written as name/value pairs, A `name:value` pair consists of a field name (in double quotes), followed by a colon, followed by a value.
 - *JSON* **objects** are written inside `curly braces.`
 - *JSON* **arrays** are written inside `square brackets.`
 ```
@@ -18,7 +18,7 @@ JSON  is an open standard file format and data interchange format that uses huma
 [  
     {"firstName":"Ahmad", "lastName":"Saif"},   
     {"firstName":"Raheem", "lastName":"Sterling"},   
-    {"firstName":"Nisa", "lastName":"Sultan"}  
+    {"firstName":"NisaSultan", "lastName":"BadFood"}  
 ]
 ```
 
@@ -26,7 +26,7 @@ JSON  is an open standard file format and data interchange format that uses huma
 
 # Json Object Serialization
 
-We can use the *JsonSerializer* class with custom types to serialize from and deserialize into.
+We can use the `JsonSerializer` (static)class with custom types to serialize from and deserialize into.
 ```cs
 public static class JsonSerializer
 ```

@@ -31,7 +31,7 @@ graph TD
 1. **Increased complexity:** An N-tier architecture can be more complex than a single-tier or two-tier architecture, since there are more components and interactions between those components. This can make it more difficult to develop, deploy and manage an N-tier system.
 2. **Performance issues:** N-tier architectures can suffer from performance issues, since data has to be passed between the different tiers. This can be especially troublesome if data is being passed between tiers that are located on different servers (or even different geographical locations).
 3. **Reduced flexibility:** An N-tier architecture can also reduce flexibility, as changes in one layer can affect other layers.
-4. **Security risks:** An N-tier system can also be more vulnerable to security attacks, since there are more potential entry points for hackers. Additionally, if one tier
+4. **Security risks:** An N-tier system can also be more vulnerable to security attacks, since there are more potential entry points for hackers.
 
 ---
 

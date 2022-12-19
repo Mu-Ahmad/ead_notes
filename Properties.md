@@ -15,6 +15,17 @@ Properties are a mean to achieve enacpsulation^[Encapsulation is a way to restri
 - The `value` keyword is used to define the value being assigned by the `set` or `init` accessor.
 - Properties can be _read-write_ (they have both a `get` and a `set` accessor), _read-only_ (they have a `get` accessor but no `set` accessor), or _write-only_ (they have a `set` accessor, but no `get` accessor). Write-only properties are rare and are most commonly used to restrict access to sensitive data.
 
+<u>There are a few potential drawbacks to using properties in C#:</u>
+
+1.  **Performance:** Using properties can be slightly slower than using fields, as they involve additional method calls. However, the difference in performance is usually not significant unless you are working with large amounts of data or performance-critical code.
+    
+2.  **Code clarity:** Using properties can make your code more verbose and harder to read, especially if you have a large number of them in a class. This can make it more difficult to understand the purpose and structure of your code.
+    
+3.  **Debugging:** Debugging code that uses properties can be more challenging, as you have to step through both the getter and setter methods to see what is happening. This can make it harder to understand the flow of control in your code and identify problems.
+    
+
+Overall, properties are a useful language feature in C#, but they should be used with care and consideration for their potential drawbacks. It is important to strike a balance between the benefits of using properties and the potential downsides.
+
 ```cs
 class Person
 {
@@ -143,7 +154,7 @@ type: WordCloud
 #-----------------#
 #- chart data    -#
 #-----------------#
-data: "wordcount:ead_lecture4"
+data: "wordcount:Properties"
 
 #-----------------#
 #- chart options -#

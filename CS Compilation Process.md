@@ -35,29 +35,26 @@ title: .exe vs .dll
 2. An EXE file can be run independently while a DLL is used by other applications.
 3. A DLL file can be reused by other applications while an EXE cannot.
 ```
+
+##  File Hierarchy in DotNet Project
+Here is a general overview of the file structure of a .NET project:
+-   **Solution file:** A solution file (with the .sln extension) is the top-level container for a .NET project. It contains references to all the projects in the solution and stores information about the solution's configuration.
+    
+-   **Project files:** A project file (with the .csproj or .vbproj extension) represents a buildable unit in a .NET solution. It contains references to all the source code files and other resources that are part of the project, as well as information about the project's build settings and dependencies.
+    
+-   **Source code files:** Source code files contain the actual code for the project, written in C# or Visual Basic. These files typically have the .cs or .vb extension.
+    
+-   **Configuration files:** Configuration files (such as app.config or web.config) contain settings and configuration information for the project.
+    
+-   **Resources:** Resources are files that are used by the project, such as images, audio files, and data files. These files are typically stored in a separate "Resources" folder within the project.
+    
+-   **References:** References are libraries and assemblies that are referenced by the project. These files are typically stored in a separate "References" folder within the project.
+    
+
+This is just a general overview of the file structure of a .NET project. The actual file structure may vary depending on the specific requirements and needs of the project.
+
+
+
+
 <br>
-
-```chartsview
-#-----------------#
-#- chart type    -#
-#-----------------#
-type: WordCloud
-
-#-----------------#
-#- chart data    -#
-#-----------------#
-data: "wordcount:ead_lecture1"
-
-#-----------------#
-#- chart options -#
-#-----------------#
-options:
-  wordField: "word"
-  weightField: "count"
-  colorField: "count"
-  wordStyle:
-    rotation: 30
-```
-
-
 Created: 2022-10-21

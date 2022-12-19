@@ -7,7 +7,26 @@ Links: [[EAD|HomePage]]
 - It is a **database access texchnology** created by Microsoft as part of it's `.NET Framework` that can access any kind of data source.
 - It's a set of `classes` that provide you rich set of data components to create *high performance, reliable and scalable databse applications.* These classes are used to perform ***CRUD*** operations from data sources.
 
-## Architecture
+<u>There are a few potential drawbacks to using ADO.NET:</u>
+
+1.  **Complexity:** ADO.NET can be complex to work with, especially for developers who are new to data access or who are not familiar with the .NET Framework.
+    
+2.  **Performance:** ADO.NET can be slower than other data access technologies, especially when working with large amounts of data.
+    
+3.  **Lack of support for non-relational databases:** ADO.NET is primarily designed for working with relational databases, and may not be the best choice for accessing non-relational databases such as NoSQL databases.
+    
+
+<u>Despite these potential drawbacks, there are also many benefits to using ADO.NET:</u>
+
+1.  **Widely supported:** ADO.NET is a mature and well-established technology that is supported by many different database systems and platforms.
+    
+2.  **Flexibility:** ADO.NET provides a wide range of options and capabilities for accessing and manipulating data, making it suitable for a wide range of data access scenarios.
+    
+3.  **Disconnected architecture:** The disconnected architecture of ADO.NET allows data to be accessed and manipulated even when the connection to the database is lost or unavailable, which can be useful in certain scenarios.
+    
+4.  **Scalability:** ADO.NET is designed to be scalable, allowing it to handle large amounts of data without significant performance degradation.
+
+## Architecture (Connected)
 ```mermaid
 graph TD
 	A[Console App]
@@ -42,6 +61,25 @@ graph TD
 `Microsoft.Data.sqlClient`
 
 ## Process
+Here is a step-by-step procedure for working with ADO.NET in a connected architecture:
+1.  Add the appropriate Data Provider to your project. For example, if you are working with a Microsoft SQL Server database, you would add the SqlClient Data Provider.
+    
+2.  Create a connection string that specifies the connection details for the database, such as the server name, database name, and login credentials.
+    
+3.  Create a connection object using the Data Provider's connection class (e.g. SqlConnection for the SqlClient Data Provider).
+    
+4.  Open the connection to the database using the Open() method of the connection object.
+    
+5.  Create a command object using the Data Provider's command class (e.g. SqlCommand for the SqlClient Data Provider).
+    
+6.  Set the command's text property to the desired SQL statement, and set the connection property to the connection object.
+    
+7.  Execute the command using the ExecuteReader() method, which returns a data reader object that can be used to retrieve the data returned by the command.
+    
+8.  Use the data reader's methods (e.g. Read(), GetValue(), etc.) to retrieve the data from the result set.
+    
+9.  Close the connection to the database using the Close() method of the connection object.
+## Example
 ```cs
 using System;
 using System.Data.SqlClient;

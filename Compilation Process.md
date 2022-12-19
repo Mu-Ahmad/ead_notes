@@ -75,7 +75,7 @@ Obtains the next character or function key pressed by the user.
 #### Returns
 `ConsoleKeyInfo`
 
-An object that describes the `ConsoleKey` constant and Unicode character, if any, that correspond to the pressed console key. The `ConsoleKeyInfo` object also describes, in a bitwise combination of `ConsoleModifiers` values, whether **one or more** *Shift*, *Alt*, or Ctrl *modifier* keys was pressed *simultaneously with the console key.*
+An object that describes the `ConsoleKey` constant and Unicode character, if any, that correspond to the pressed console key. The `ConsoleKeyInfo` object also describes, in a bitwise combination of `ConsoleModifiers` values, whether **one or more** Shift, Alt, or Ctrl modifier keys was pressed *simultaneously with the console key.*
 
 
 #### Example
@@ -121,7 +121,7 @@ class Example
 
 
 ## Creating a .dll file
-By default access modifier of a class is `internal` meaning that  it is only visible with in it's assembly. We need to ensure that class of a library(.dll) is public. You will need to do it little different in Visual Studio *(Not fun).*
+By default access modifier of a class is `internal` meaning that  it is only visible with in it's assembly. We need to ensure that class of a library(.dll) is public. You will need to do it little different in Visual Studio *(Not fun).* [Add Reference]
 ```cs
 Public class MyLibrary
 {
@@ -151,6 +151,27 @@ class MyProgram
 ```
 `$ csc /reference:MyLibrary.dll MyProgram.c && MyProgram.exe` -> `69`
 
+## Arguments
+In C#, arguments are generally passed by *value* by default. This means that when a method is called with an argument, a copy of the value of the argument is made and passed to the method. The method operates on the copy, and any changes made to the argument within the method do not affect the original value.
+
+However, it is also possible to pass arguments by reference in C# by using the `ref` or `out` keywords. When an argument is passed by reference, a reference to the memory location of the argument is passed to the method, rather than a copy of the value. This means that the method can modify the original value of the argument directly, and the changes will be reflected in the calling code.
+
+```cs
+void Increment(ref int x)
+{
+    x++;
+}
+
+// To call this method and pass an argument by reference, you would use the ref keyword like this:
+
+int y = 5;
+Increment(ref y);
+
+// After this code runs, the value of `y` will be 6.
+```
+It is important to be careful when using the `ref` and `out` keywords, as passing arguments by reference can make the code more difficult to understand and can increase the risk of *unintended side effects.* It is generally best to use these keywords only when they are necessary to achieve the desired behavior in the code.
+
+
 ## Circular Reference
 A circular reference is when an object contains a *reference to itself.* This can happen in C# when an object contains a reference to another object which contains a reference back to the first object. This can cause problems because it can create a loop that is never broken and can cause the program to crash.
 
@@ -171,7 +192,18 @@ class MyProgram
 
 
 ## Object Intializer
-Need to fill this
+In C#, object initializers allow you to create and initialize an object in a single statement. They provide a *concise syntax* for creating and initializing objects without having to explicitly call a constructor and set the object's properties individually.
+
+```cs
+class Point
+{
+    public int X { get; set; }
+    public int Y { get; set; }
+}
+
+Point point = new Point { X = 10, Y = 20 };
+
+```
 ## parmas keywords
 By using the `params` keyword, you can specify a *method parameter* that takes a variable number of arguments. The parameter type must be a single-dimensional array.
 
@@ -182,6 +214,23 @@ When you call a method with a `params` parameter, you can pass in:
 -   A comma-separated list of arguments of the type of the array elements.
 -   An array of arguments of the specified type.
 -   No arguments. If you send no arguments, the length of the `params` list is zero.
+
+```cs
+public void PrintNumbers(params int[] numbers)
+{
+    foreach (int number in numbers)
+    {
+        Console.WriteLine(number);
+    }
+}
+
+PrintNumbers(1, 2, 3, 4, 5);
+
+int[] numbers = { 1, 2, 3, 4, 5 };
+PrintNumbers(numbers);
+// the array of integers is automatically expanded and passed as individual arguments to the method.
+```
+
 
 # To Dos
 - [x] Set up VS and stuff

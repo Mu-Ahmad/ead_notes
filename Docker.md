@@ -6,6 +6,8 @@ Links: [[EAD|HomePage]]
 *Docker* is an open platform for developing, shipping, and running applications. *Docker* enables you to separate your applications from your **infrastructure** so you can deliver software quickly. With *Docker*, you can manage your **infrastructure** in the same ways you manage your applications. *Docker* takes away **repetitive**, **mundane** **configuration** **tasks** and is used throughout the development lifecycle for fast, easy and portable *application development.*
 
 ### Architecture
+Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package.
+
 Docker uses a client-server architecture. The Docker _client_ talks to the Docker _daemon_, which does the heavy lifting of building, running, and distributing your Docker containers. The Docker client and daemon _can_ run on the same system, or you can connect a Docker client to a remote Docker daemon. The Docker client and daemon communicate using a REST API, over UNIX sockets or a network interface. Another Docker client is Docker Compose, that lets you work with applications consisting of a set of containers.
 
 ![[Screenshot 2022-11-17 at 11.08.26 AM.jpg]]
@@ -17,7 +19,8 @@ A[Docker File] ---> |Builds| B[Docker Image] --->|Run| C[Docker Container]
 ```
 
 #### Dockerfile
-Docker can build images automatically by reading the instructions from a `Dockerfile`. A `Dockerfile` is a text document that contains all the commands a user could call on the command line to assemble an image. This page describes the commands you can use in a `Dockerfile`.
+A `Dockerfile` is a text file that contains the instructions for building a Docker image. It specifies the base image to use, any packages or dependencies that need to be installed, and any additional commands or configurations that are needed to set up the environment.
+
 Some of the instructions are:
 - Base Image
 - Copy Code
@@ -75,6 +78,20 @@ _A container is a runnable instance of an image_. You can create, start, stop, m
  3. Push the image to the repository using the following command
  docker image push --all-tags  *username*/*repository-name*
 
+#### A list of some of the most important Docker commands:
+
+1.  `docker build`: Build an image from a Dockerfile.
+2.  `docker run`: Run a command in a new container.
+3.  `docker ps`: List all running containers.
+4.  `docker stop`: Stop a running container.
+5.  `docker rm`: Remove a stopped container.
+6.  `docker rmi`: Remove an image.
+7.  `docker pull`: Pull an image from a registry.
+8.  `docker push`: Push an image to a registry.
+9.  `docker images`: List all images.
+10.  `docker exec`: Run a command in an existing container.
+11.  `docker commit`: Create a new image from a container's changes.
+
 
 ---
 
@@ -88,7 +105,7 @@ type: WordCloud
 #-----------------#
 #- chart data    -#
 #-----------------#
-data: "wordcount:ead_lecture9"
+data: "wordcount:Docker"
 
 #-----------------#
 #- chart options -#
